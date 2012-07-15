@@ -1,0 +1,7 @@
+[user]
+	name = John Griffith
+	email = john.griffith@solidfire.com
+[core]
+	editor = vim
+[color]
+	ui = auto

@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/jdg/git/nova-897075/nova/db/sqlalchemy/migrate_repo/versions'
+let g:netrw_dirhist_2='/home/jdg/.oh-my-zsh'
+let g:netrw_dirhist_3='/home/jdg'
+let g:netrw_dirhist_4='/home/jdg/git/nova-8073'
+let g:netrw_dirhist_5='/home/jdg/git/python-cinderclient'
