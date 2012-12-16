@@ -1,15 +1,15 @@
-call pathogen#infect()
+syntax on
 
 set nocompatible
 let mapleader=","
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set nonumber
+set number
 set paste
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
-set hls
+set hlsearch
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
@@ -32,8 +32,6 @@ set nowrap
 inoremap # #
 
 
-syntax on
-
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -53,51 +51,28 @@ if has("gui_running")
     set background=dark
     set guifont=Liberation\ Mono\ 08
 	set guioptions-=T
-	colorscheme ir_black
-	"colorscheme aldmeris
+	"colorscheme irbm
+	colorscheme aldmeris
 else
-    set background=dark
+    set background=light
 	" let g:aldmeris_termcolors="tango"
-	"colorscheme aldmeris
-	colorscheme ir_black
+	colorscheme aldmeris
+	"colorscheme irbm
 endif
 
 " ===========================================
 " Enhanced keyboard mappings
 " ===========================================
-nnoremap <F8> :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
-
-nmap <F2> :w<CR>    " F2 saves in normal mode
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
-
-" switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-
-" recreate tags file with F5
-map <F5> :!ctags -R .c++-kinds=+p .fields=+iaS .extra=+q .<CR>
-
-" build using makeprg with <F7>
-map <F7> :make<CR>
-
-" build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
-
-" goto definition with F12
-map <F12> <C-]>
-
-" in diff mode we use the spell check keys for merging
-map <C-J> <C-W>j<15C-W>_
-map <C-K> <C-W>k<15C-W>_
-if &diff
-  " diff settings
-  map <M-Down> ]c
-  map <M-Up> [c
-  map <M-Left> do
-  map <M-Right> dp
-  map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
-endif
+nnoremap <F2> :set nonumber!<CR>
+nmap <silent> <Leader>n :set nonumber!<CR>
+nmap <C-P> :NERDTreeToggle<CR>
+nmap <Leader>o :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
+nmap <Leader>l :TlistToggle<CR>
+nmap <F4> :TlistToggle<CR>
+nnoremap <leader>a :Ack
+inoremap jj <Esc>
+let g:CommandTAcceptSplitMap=['<C-s>', '<C-CR>', '<C-b>']
 
 " ================================================
 " make navigating the split window keys nicer
@@ -152,4 +127,4 @@ function! HasPaste()
         return ''
     endif
 endfunction
-
+autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
