@@ -27,6 +27,9 @@ set scrolloff=3
 set backspace=2
 set showmatch
 set nowrap
+set mouse+=a	"so we can copy without capturing line numbers of both windows in vsp mode
+set ttymouse=xterm2
+set clipboard=autoselect
 
 " don't outdent these please!
 inoremap # #
