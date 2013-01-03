@@ -54,13 +54,13 @@ if has("gui_running")
     set background=dark
     set guifont=Liberation\ Mono\ 08
 	set guioptions-=T
-	"colorscheme irbm
-	colorscheme aldmeris
+	colorscheme irbm
+	"colorscheme aldmeris
 else
-    set background=light
+    set background=dark
 	" let g:aldmeris_termcolors="tango"
-	colorscheme aldmeris
-	"colorscheme irbm
+	"colorscheme aldmeris
+	colorscheme irbm
 endif
 
 " ===========================================
