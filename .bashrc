@@ -86,7 +86,8 @@ function clean_git_prompt {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;31m\]\u@\h\[\033[00m\]: \[\033[01;36m\]\w\[\033[00m\]\[\033[01;31m\]$(dirty_git_prompt)\[\033[01;32m\]$(clean_git_prompt)\[\033[00m\]\[\033[01;35m\]\[\033[00m\]\[\033[01;35m\]\[\033[00m\]\\$ '
+    #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]: \[\033[01;36m\]\w\[\033[00m\]\[\033[01;31m\]$(dirty_git_prompt)\[\033[01;32m\]$(clean_git_prompt)\[\033[00m\]\[\033[01;35m\]\[\033[00m\]\[\033[01;35m\]\n\[\033[00m\]\\$ '
+	PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 else
     PS1='\u@\h:\w$(git_branch)\$ '
 fi
@@ -118,6 +119,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias sfconn='/usr/sbin/netExtender --dns-only-local < ~/sf-boulder'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

@@ -5,7 +5,7 @@ let mapleader=","
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set number
+set nonumber
 set paste
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -27,7 +27,8 @@ set scrolloff=3
 set backspace=2
 set showmatch
 set nowrap
-set mouse+=a	"so we can copy without capturing line numbers of both windows in vsp mode
+"set mouse+=a	"so we can copy without capturing line numbers of both windows in vsp mode
+set mouse=r
 set ttymouse=xterm2
 set clipboard=autoselect
 
@@ -51,17 +52,16 @@ command! W :w    " Annoying error!!!
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 if has("gui_running")
-    set background=dark
+    set background=light
     set guifont=Liberation\ Mono\ 08
 	set guioptions-=T
-	colorscheme irbm
-	"colorscheme aldmeris
+	colorscheme pychimp
 else
     set background=dark
 	" let g:aldmeris_termcolors="tango"
-	"colorscheme aldmeris
-	colorscheme irbm
+	colorscheme pychimp
 endif
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " ===========================================
 " Enhanced keyboard mappings

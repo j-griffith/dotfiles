@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/jgriffith/git/cinder-clones/cinder/volume/drivers/nexenta'
+let g:netrw_dirhist_2='/home/jgriffith/git/cinder-clones/cinder/volume'
+let g:netrw_dirhist_3='/home/jgriffith/hg/dev/tools/python-framework/solidfire/info_collect'
+let g:netrw_dirhist_4='/home/jgriffith/git/cinder.jdg'

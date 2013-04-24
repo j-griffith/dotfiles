@@ -1,0 +1,1 @@
+AnsiEsc.vba: call delete('/home/jgriffith/.vim/plugin/AnsiEscPlugin.vim')|call delete('/home/jgriffith/.vim/autoload/AnsiEsc.vim')|call delete('/home/jgriffith/.vim/plugin/cecutil.vim')|call delete('/home/jgriffith/.vim/doc/AnsiEsc.txt')
