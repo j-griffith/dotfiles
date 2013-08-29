@@ -8,9 +8,10 @@ cp .git-completion.bash ~/
 
 sudo apt-get install python-pip ruby rubygems
 sudo pip install pyflakes==0.7.2
-sudo pip install flake8==2.0   
+sudo pip install flake8==2.0
 sudo pip install git-review
 sudo gem install hub
+sudo gem install gist
 
 if [ -d /home/vagrant ]; then
     cp .gitconfig ~/
