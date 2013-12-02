@@ -6,7 +6,11 @@ cp .bashrc ~/
 cp .gitconfig ~/
 cp .git-completion.bash ~/
 
-sudo apt-get install -y python-pip ruby rubygems
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository -y ppa:brightbox/experimental
+sudo apt-get update 
+sudo apt-get install -y python-pip ruby rubygems lvm2
+
 sudo pip install pyflakes==0.7.4
 sudo pip install flake8==2.0
 sudo pip install git-review
