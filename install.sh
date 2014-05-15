@@ -7,12 +7,18 @@ cp .gitconfig ~/
 cp .git-completion.bash ~/
 
 sudo apt-get install -y python-software-properties
-sudo add-apt-repository -y ppa:brightbox/experimental
-sudo apt-get update 
-sudo apt-get install -y python-pip ruby rubygems lvm2
+sudo apt-get update
+if [[ $(lsb_release -rs) =~ "14.04" ]]
+then
+  echo "make it work for 14.04"
+  sudo apt-get install -y python-pip ruby lvm2
+else
+  echo "running on 12.04"
+  sudo apt-get install -y python-pip ruby rubygems lvm2
+fi
 
-sudo pip install pyflakes==0.7.4
-sudo pip install flake8==2.0
+sudo pip install pyflakes
+sudo pip install flake8
 sudo pip install git-review
 sudo gem install hub
 sudo gem install gist
