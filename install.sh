@@ -20,6 +20,8 @@ fi
 sudo pip install pyflakes
 sudo pip install flake8
 sudo pip install git-review
+sudo pip install -U setuptools
+
 sudo gem install hub
 sudo gem install gist
 
