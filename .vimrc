@@ -16,7 +16,6 @@ set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set textwidth=80
 set shiftround
-set t_Co=256
 set completeopt=menuone,longest,preview
 set pumheight=6      " limit size of completion window
 
@@ -51,16 +50,6 @@ command! W :w    " Annoying error!!!
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-if has("gui_running")
-    set background=light
-    set guifont=Liberation\ Mono\ 08
-	set guioptions-=T
-	colorscheme pychimp
-else
-    set background=dark
-	" let g:aldmeris_termcolors="tango"
-	colorscheme pychimp
-endif
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " ===========================================
